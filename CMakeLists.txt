@@ -37,9 +37,10 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
+
 include_directories(
-        ${CMAKE_SOURCE_DIR}/samd21a/include
-        ${CMAKE_SOURCE_DIR}/CMSIS/Core/Include
+        ${CMAKE_SOURCE_DIR}/board_sdk/CMSIS/Core/Include/
+        ${CMAKE_SOURCE_DIR}/board_sdk/samd21a/include/
         ${CMAKE_SOURCE_DIR}/Universal_hall/hal_gpio/
         ${CMAKE_SOURCE_DIR}/Universal_hall/hal_gpio/platform/atmelsam/
         ${CMAKE_SOURCE_DIR}/Universal_hall/hal_i2c/
@@ -51,18 +52,22 @@ include_directories(
 add_definitions( -D__SAMD21G18A__ -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin )
 
 file(GLOB_RECURSE SOURCES
-        "samd21a/gcc/gcc/*.*" "samd21a/gcc/*.*"
-        "main.cpp"
+        "board_sdk/samd21a/gcc/*.*"
+        "board_sdk/samd21a/gcc/gcc/*.*"
+        "src/main.c"
         #[[TODO rest of cource locations]]
         )
 
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/samd21a/gcc/gcc/samd21g18a_flash.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/board_sdk/samd21a/gcc/gcc/samd21g18a_flash.ld)
 
 add_link_options(-lm -Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map --specs=nano.specs)
 add_link_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
+
+
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+target_link_libraries(${PROJECT_NAME}.elf PUBLIC Universal_hall)
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
@@ -72,3 +77,6 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
         COMMENT "Building ${HEX_FILE}
 Building ${BIN_FILE}")
+
+add_subdirectory(board_sdk)
+add_subdirectory(lib)
