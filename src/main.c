@@ -108,14 +108,15 @@ void Clock_Init(void) {
 
 int main(void)
 {
+    /*
+     * Set the main clock to 48MHz
+     */
 	Clock_Init();
-	/* Initializes MCU, drivers and middleware */
-	//atmel_start_init();
-	/* Replace with your application code */
+    /*
+     * Call the crossplatform hal to set the pin output dir
+     */
     SetGPIOPinDirection(LedSPin, kGPIODirOutput);
 	while (1) {
         ToggleGPIOPin(LedSPin);
-		//PORT->Group[0].OUTTGL.reg |= 1 << 2;
-		//delay_ms(500);
 	}
 }
