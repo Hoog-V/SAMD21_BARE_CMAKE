@@ -1,0 +1,23 @@
+
+
+OpenDocument="main.c", FilePath="/home/victor/babysim/samd21_basic_osc/main.c", Line=0
+OpenDocument="startup_samd21.c", FilePath="/home/victor/babysim/samd21_basic_osc/samd21a/gcc/gcc/startup_samd21.c", Line=193
+OpenDocument="gpio_samd.c", FilePath="/home/victor/babysim/samd21_basic_osc/Universal_hall/hal_gpio/platform/atmelsam/gpio_samd.c", Line=31
+OpenDocument="i2c.c", FilePath="/home/victor/babysim/samd21_basic_osc/Universal_hall/hal_i2c/platform/atmelsam/i2c.c", Line=135
+OpenToolbar="File", Floating=0, x=1, y=0
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenToolbar="Breakpoints", Floating=0, x=2, y=0
+OpenWindow="Call Stack", DockArea=BOTTOM, x=1, y=0, w=955, h=301, TabPos=1, TopOfStack=1, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=1, w=737, h=236, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Memory 1", DockArea=BOTTOM, x=1, y=0, w=955, h=301, TabPos=2, TopOfStack=0, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x150
+OpenWindow="Local Data", DockArea=RIGHT, x=0, y=2, w=737, h=175, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=RIGHT, x=0, y=0, w=737, h=197, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=959, h=318, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="RTOS", DockArea=BOTTOM, x=1, y=0, w=955, h=301, TabPos=0, TopOfStack=0, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, Showing=""
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Local Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[140;100;100;100;210;100]
+TableHeader="Functions", SortCol="Name", SortOrder="DESCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[1715;100;100;100;168]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[161;112;112;100;168;302]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;374]
