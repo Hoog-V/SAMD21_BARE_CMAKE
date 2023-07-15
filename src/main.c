@@ -1,4 +1,7 @@
 #include "sam.h"
+#include <hal_gpio.h>
+
+const GPIOPin LedSPin = {kGPIOPortA, 2};
 
 // Constants for Clock Generators
 #define GENERIC_CLOCK_GENERATOR_0   (0u)
@@ -109,10 +112,9 @@ int main(void)
 	/* Initializes MCU, drivers and middleware */
 	//atmel_start_init();
 	/* Replace with your application code */
-	PORT->Group[0].DIRSET.reg |= 1 << 2;
-	PORT->Group[0].OUTCLR.reg |= 1 << 2;
+    SetGPIOPinDirection(LedSPin, kGPIODirOutput);
 	while (1) {
-        PORT->Group[0].OUTTGL.reg |= 1 << 2;
+        ToggleGPIOPin(LedSPin);
 		//PORT->Group[0].OUTTGL.reg |= 1 << 2;
 		//delay_ms(500);
 	}
