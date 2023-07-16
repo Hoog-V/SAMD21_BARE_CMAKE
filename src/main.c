@@ -2,6 +2,7 @@
 #include <hal_gpio.h>
 
 const GPIOPin LedSPin = {kGPIOPortA, 2};
+const GPIOPin GCLK0Pin = {kGPIOPortA, 14};
 
 // Constants for Clock Generators
 #define GENERIC_CLOCK_GENERATOR_0   (0u)
@@ -82,8 +83,9 @@ void Clock_Init(void) {
 	// Location of value is defined in Data Sheet Table 10-5. NVM Software Calibration Area Mapping
 	
 	// Switch DFLL48M to Closed Loop mode and enable WAITLOCK
-	SYSCTRL->DFLLCTRL.reg |= (uint16_t) (SYSCTRL_DFLLCTRL_MODE | SYSCTRL_DFLLCTRL_WAITLOCK); 
+	SYSCTRL->DFLLCTRL.reg |= (uint16_t) (SYSCTRL_DFLLCTRL_MODE | SYSCTRL_DFLLCTRL_WAITLOCK);
 
+    GCLK->GENDIV.reg = GCLK_GENDIV_DIV(1) | GCLK_GENDIV_ID(GENERIC_CLOCK_GENERATOR_0); //set divide factor for gen clock 0
 	// Now that DFLL48M is running, switch CLKGEN0 source to it to run the core at 48 MHz.
 	// Enable output of Generic Clock Generator 0 (GCLK_MAIN) to the GCLK_IO[0] GPIO Pin
 	GCLK->GENCTRL.bit.RUNSTDBY = 0;		// Generic Clock Generator is stopped in stdby

@@ -22,8 +22,8 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("/home/victor/babysim/samd21_basic_osc", "$(ProjectDir)");
-  Project.AddPathSubstitute ("/home/victor/babysim/samd21_basic_osc", "$(ProjectDir)");
+  Project.AddPathSubstitute ("/home/victor/babysim/SAMD21_BARE_CMAKE", "$(ProjectDir)");
+  Project.AddPathSubstitute ("/home/victor/babysim/SAMD21_BARE_CMAKE", "$(ProjectDir)");
   Project.SetDevice ("ATSAMD21G18A");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
@@ -33,7 +33,7 @@ void OnProjectLoad (void) {
   //
   // User settings
   //
-  File.Open ("$(ProjectDir)/gcc/AtmelStart.elf");
+  File.Open ("$(ProjectDir)/cmake-build-debug/ATMELSAMD21.elf");
 }
 
 /*********************************************************************
