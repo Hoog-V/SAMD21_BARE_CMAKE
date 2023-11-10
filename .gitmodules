@@ -4,3 +4,6 @@
 [submodule "board_sdk/CMSIS_5"]
 	path = board_sdk/CMSIS_5
 	url = https://github.com/ARM-software/CMSIS_5.git
+[submodule "lib/Universal_hal"]
+	path = lib/Universal_hal
+	url = git@github.com:Hoog-V/Universal_hal.git

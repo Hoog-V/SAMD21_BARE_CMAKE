@@ -51,6 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .idea
-Universal_hall/
 cmake-build-debug/
-lib/
