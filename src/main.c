@@ -1,8 +1,8 @@
 #include "sam.h"
 #include <hal_gpio.h>
 
-const GPIOPin LedSPin = {kGPIOPortA, 2};
-const GPIOPin GCLK0Pin = {kGPIOPortA, 14};
+const gpio_pin_t LedSPin = GPIO_PIN_PA2;
+const gpio_pin_t GCLK0Pin = GPIO_PIN_PA14;
 
 // Constants for Clock Generators
 #define GENERIC_CLOCK_GENERATOR_0   (0u)
@@ -117,8 +117,9 @@ int main(void)
     /*
      * Call the crossplatform hal to set the pin output dir
      */
-    SetGPIOPinDirection(LedSPin, kGPIODirOutput);
+    gpio_set_pin_mode(LedSPin, GPIO_MODE_OUTPUT);
 	while (1) {
-        ToggleGPIOPin(LedSPin);
+        gpio_toggle_pin_output(LedSPin);
+        for(uint32_t i =0; i< 100000; i++);
 	}
 }

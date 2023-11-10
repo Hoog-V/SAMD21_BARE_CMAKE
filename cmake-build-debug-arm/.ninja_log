@@ -1,0 +1,15 @@
+# ninja log v5
+2	155	1699641326409284541	board_sdk/CMakeFiles/board_sdk.dir/gcc/system_samd21.c.obj	2721bf46a31f8eaa
+1	158	1699641326412617891	CMakeFiles/ATMELSAMD21.elf.dir/board_sdk/gcc/system_samd21.c.obj	3fbf2e992ebd22ed
+2	171	1699641326425951294	board_sdk/CMakeFiles/board_sdk.dir/gcc/gcc/startup_samd21.c.obj	907f131ed93f353f
+1	181	1699641326432617995	CMakeFiles/ATMELSAMD21.elf.dir/board_sdk/gcc/gcc/startup_samd21.c.obj	3fdc5c576f8142ca
+11	202	1699641326455951449	lib/Universal_hal/CMakeFiles/Universal_hall.dir/hal/platform/atmelsam/i2c_slave/i2c_slave.c.obj	9d9970f6457b7b29
+2	229	1699641326482618255	lib/Universal_hal/CMakeFiles/Universal_hall.dir/hal/platform/atmelsam/irq/default_irq_handlers.c.obj	bd7e99001c5f36b1
+3	242	1699641326495951657	lib/Universal_hal/CMakeFiles/Universal_hall.dir/hal/platform/atmelsam/gpio/gpio_samd.c.obj	c4029b54e896fead
+171	250	1699641326499285008	board_sdk/libboard_sdk.a	a5ef51b5602bdb4d
+10	255	1699641326509285059	lib/Universal_hal/CMakeFiles/Universal_hall.dir/hal/platform/atmelsam/i2c_host/i2c.c.obj	1f29ad433588db3d
+20	260	1699641326512618410	lib/Universal_hal/CMakeFiles/Universal_hall.dir/hal/platform/atmelsam/spi_host/spi_host.c.obj	1280924d2810f2d7
+155	295	1699641326549285267	lib/Universal_hal/CMakeFiles/Universal_hall.dir/hal/platform/atmelsam/spi_slave/spi_slave.c.obj	351435525e813502
+3	400	1699641484956778553	CMakeFiles/ATMELSAMD21.elf.dir/src/main.c.obj	639bec33961d52ba
+3	469	1699641485020112218	lib/Universal_hal/libUniversal_hall.a	8e37e34611e0867f
+469	535	1699641485076779182	ATMELSAMD21.elf	72fc39aafa701d64
